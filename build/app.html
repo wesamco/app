@@ -1,0 +1,58 @@
+<div ng-if="showMenu">
+    <ion-menu [content]="content" id="RightMenu" side="right">
+
+        <ion-toolbar class="toolbar" primary="">
+
+
+            <div class="toolbar-background">
+            </div>
+            <div class="toolbar-content">
+                <ion-title>
+                    <div class="toolbar-title">
+                        MyCom
+                    </div>
+                </ion-title>
+            </div>
+        </ion-toolbar>
+        <ion-content>
+            <scroll-content>
+                <ion-list>
+                    <center>
+                        <ion-list-header>
+                            
+
+                        </ion-list-header>
+                        <a ion-item (click)="showModal('profile')">
+                            <center>
+                                {{ 'Modals.Profile.Title' | translate }}
+                            </center>
+                        </a>
+                        <a ion-item (click)="showModal('manage')">
+                            <center>
+                                {{ 'Modals.Manage.Title' | translate }}
+                            </center>
+                        </a>
+                        <a ion-item (click)="showModal('school')">
+                            <center>
+                                {{ 'Modals.School.Title' | translate }}
+                            </center>
+                        </a>
+                        <a ion-item (click)="showModal('settings')">
+                            <center>
+                                {{ 'Modals.Settings.Title' | translate }}
+                            </center>
+                        </a>
+                        <!--
+                        <a ion-item (click)="openModal({charNum: 2})">
+                            <center>
+                                Home2
+                            </center>
+                        </a>
+                        -->
+                    </center>
+                </ion-list>
+            </scroll-content>
+        </ion-content>
+    </ion-menu>
+</div>
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

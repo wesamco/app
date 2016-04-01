@@ -1,0 +1,89 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                <span *ngIf="isQuestion">
+                {{ 'Pages.Contact.Type.Questions' | translate }}
+                </span>
+                <span *ngIf="!isQuestion">
+                {{ 'Pages.Contact.Type.Reports' | translate }}
+                </span>
+            </button>
+        </ion-buttons>
+        <span left style="float:left; margin-left: 10px;" class="label resolved">
+             {{ticket.TicketCategoryTranslation}}
+            </span>
+        <!--
+        <span left style="float:left; margin-left: 10px;" class="label resolved">
+             {{ticket.TicketTypeTranslation}}
+            </span>
+            -->
+    </ion-toolbar>
+</ion-navbar>
+<ion-content class="body">
+    <h5 padding class="title">{{ticket.Title}} </h5>
+    <section id="cd-timeline" class="cd-container">
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture profile-img">
+                <img src="{{ticket.CreatorUserInfo.Thumbnail}}" alt="Picture">
+            </div>
+            <div class="cd-timeline-content">
+                <div>
+                    <ion-item>
+                        <h5 style="margin-right: 10px;"> 
+                {{ ticket.CreatorUserInfo.First + ' ' + ticket.CreatorUserInfo.Last}}  @{{ ticket.CreatorUserInfo.Username }}
+                        </h5>
+                        <ion-note item-right *ngIf="ticket.DateCreated.getDay() < 7"> {{ticket.DateCreated | amTimeAgo}}</ion-note>
+                        <ion-note item-right *ngIf="ticket.DateCreated.getDay() > 7">
+                            {{ticket.DateCreated | amCalendar}}
+                        </ion-note>
+                    </ion-item>
+                    <span *ngFor="#member of ticket.Members">{{member + '  ' }}</span>
+
+                </div>
+                <ion-row>
+                    <ion-col padding>
+                        <p style="white-space: pre-line;">
+                            {{ticket.Body}}
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </div>
+        <div class="cd-timeline-block" *ngFor="#comment of Comments">
+            <div class="cd-timeline-img cd-picture">
+                <img src="{{comment.CreatorUserInfo.Thumbnail}}" alt="Picture">
+            </div>
+            <div class="cd-timeline-content">
+                <ion-item>
+
+                    <h5 style="margin-right: 10px;"> 
+                {{ comment.CreatorUserInfo.First + ' ' + comment.CreatorUserInfo.Last}}  @{{ comment.CreatorUserInfo.Username }}
+                </h5>
+                    <h6 item-right *ngIf="comment.DateCreated.getDay() < 7"> {{comment.DateCreated | amTimeAgo}}</h6>
+                    <h6 item-right *ngIf="comment.DateCreated.getDay() > 7">
+                        {{comment.DateCreated | amCalendar}}
+                    </h6>
+                </ion-item>
+            </div>
+        </div>
+
+    </section>
+
+    <ion-card>
+        <ion-textarea [(ngModel)]="comment" placeholder="{{'Modals.NewContact.Properties.Message' | translate}}..."></ion-textarea>
+
+    </ion-card>
+    <button disabled="!comment" (click)="Post()" round outline>
+        {{ 'Modals.NewContact.Properties.Post' | translate }}
+    </button>
+
+    <!--
+    <ion-infinite-scroll (infinite)="doInfinite($event)" style="margin-top:170px;">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    -->
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                {{ 'Pages.Maps.Title' | translate }}
+            </button>
+        </ion-buttons>
+        <!--
+        <ion-buttons end>
+            <button>
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+        -->
+    </ion-toolbar>
+
+</ion-navbar>
+
+<ion-content padding>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="search($event)" placeholder="{{ 'Search' | translate }}" hideCancelButton="{{ 'Cancel' | translate }}"></ion-searchbar>
+    
+    <div padding>
+        <ion-list>
+            <button ion-item *ngFor="#place of ResultPlaces" (click)="OpenTicket(place)">
+                <ion-avatar item-left *ngIf="place.ThmbnailsSrc">
+                    <img src="{{place.ThmbnailsSrc}}">
+                </ion-avatar>
+                <h2 class="title">{{place.Name}}</h2>
+                <h3>{{place.PlaceType}}</h3>
+                <p>{{place.PlaceType}} </p>
+            </button>
+
+        </ion-list>
+    </div>
+
+
+
+    <!--
+
+    <button primary fab-bottom fab-right fab>
+        <ion-icon name='add'></ion-icon>
+    </button>
+-->
+
+</ion-content>

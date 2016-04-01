@@ -1,0 +1,30 @@
+<ion-navbar *navbar>
+    <ion-buttons start >
+        <button (click)="showModal('search')">
+            <ion-icon name="search"></ion-icon>
+        </button>
+    </ion-buttons>
+    
+    <!--
+        <ion-searchbar *ngIf="true" [(ngModel)]="searchQuery" (input)="search($event)" placeholder="{{ 'Search' | translate }}"
+    cancelButtonText="{{ 'Cancel' | translate }}" (cancel)="onCancel($event)" hideCancelButton="false"></ion-searchbar>
+-->
+
+    <ion-title>{{ 'Pages.Maps.Title' | translate }}</ion-title>
+
+</ion-navbar>
+
+<ion-content class="maps">
+    <!--
+    <ion-searchbar *ngIf="true" [(ngModel)]="searchQuery" (input)="search($event)" placeholder="{{ 'Search' | translate }}"
+    cancelButtonText="{{ 'Cancel' | translate }}" (cancel)="onCancel($event)" hideCancelButton="false"></ion-searchbar>
+-->
+
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" (mapClick)="mapClicked($event)">
+
+        <sebm-google-map-marker *ngFor="#m of markers; #i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
+        [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+        </sebm-google-map-marker>
+    </sebm-google-map>
+
+</ion-content>

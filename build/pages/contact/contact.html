@@ -1,0 +1,85 @@
+<ion-navbar *navbar style="padding: 0;">
+    
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start (click)="showModal('newcontact')">
+            <button>
+                <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-segment [(ngModel)]="type">
+            <ion-segment-button value="questions">
+                {{ 'Pages.Contact.Type.Questions' | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="reports">
+                {{ 'Pages.Contact.Type.Reports' | translate }}
+            </ion-segment-button>
+
+        </ion-segment>
+        
+        <!--
+        <ion-buttons end>
+            <button>
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+        -->
+        
+    </ion-toolbar>
+
+</ion-navbar>
+
+<ion-content padding class="contact">
+    
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="search($event)" placeholder="{{ 'Search' | translate }}" hideCancelButton="{{ 'Cancel' | translate }}"></ion-searchbar>
+
+    <div [ngSwitch]="type">
+        <ion-list *ngSwitchWhen="'questions'">
+
+            <ion-list-header>
+                {{ 'Pages.Contact.Type.Questions' | translate }}
+            </ion-list-header>
+<!--
+    constructor(TicketInfo: TicketInfo
+        , public Body: string
+        , public ImageSrc?: string) {
+        super(TicketInfo.Title,
+         TicketInfo.TicketCategory,
+          TicketInfo.TicketType,
+           TicketInfo.CreatorUserInfo,
+            TicketInfo.DateCreated,
+             TicketInfo.Members,
+              TicketInfo.ThmbnailsSrc,
+               TicketInfo.Id);
+    -->
+            <ion-item *ngFor="#ticket of ResultQuestions" (click)="OpenTicket(ticket)">
+                <h2 class="title">{{ticket.Title}}</h2>
+                <h3> {{ ticket.TicketCategoryTranslation }} </h3>
+                <span *ngIf="ticket.Members && ticket.Members.length > 0"  *ngFor="#member of ticket.Members" >{{member + ' '}} </span>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchWhen="'reports'">
+            <ion-list-header>
+                {{ 'Pages.Contact.Type.Reports' | translate }}
+            </ion-list-header>
+
+            <ion-item *ngFor="#ticket of ResultReports" (click)="OpenTicket(ticket)">                
+                <h2>{{ticket.Title}}</h2>
+                <h3> {{ ticket.TicketCategoryTranslation }} </h3>
+                <span *ngIf="ticket.Members && ticket.Members.length > 0"  *ngFor="#member of ticket.Members" >{{member + ' '}} </span>
+            </ion-item>
+
+        </ion-list>
+
+    </div>
+
+
+    <!--
+
+    <button primary fab-bottom fab-right fab>
+        <ion-icon name='add'></ion-icon>
+    </button>
+-->
+
+</ion-content>

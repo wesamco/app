@@ -1,0 +1,39 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                {{ 'Back' | translate }}
+            </button>
+        </ion-buttons>
+        <ion-title>{{ 'Modals.Profile.Title' | translate }}</ion-title>
+
+    </ion-toolbar>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            {{ 'Modals.Profile.Title' | translate }}
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>{{ 'Modals.Profile.Properties.Name' | translate }}</ion-label>
+            <ion-label> {{membershipService.getIdentity().unique_name}} </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{ 'Modals.Profile.Properties.Town' | translate }}</ion-label>
+            <ion-label> {{membershipService.getIdentity().unique_name}} </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{ 'Modals.Profile.Properties.Education' | translate }}</ion-label>
+            <ion-label> {{membershipService.getIdentity().unique_name}} </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{ 'Modals.Profile.Properties.Job' | translate }}</ion-label>
+            <ion-label> {{membershipService.getIdentity().unique_name}} </ion-label>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

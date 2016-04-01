@@ -1,0 +1,131 @@
+{
+    "Back": "חזור",
+    "Ok": "אישור",
+    "Okay": "בְּסֵדֶר",
+    "Cancel": "בטל",
+    "Like": "أعجبني",
+    "Comment": "הוסף תגובה",
+    "Comments": "תגובות",
+    "Search": "חַפֵּשׂ",
+    "Login": "התחבר",
+    "Username": "שם משתמש",
+    "Password": "סִיסמָה",
+    "Pages": {
+        "News": {
+            "Title": "חדשות"
+        },
+        "Announcements": {
+            "Title": "הכרזות"
+        },
+        "Contact": {
+            "Title": "צור קשר",
+            "Type": {
+                "Questions": "שאלות",
+                "Reports": "דיווחים",
+                "Question": "שְׁאֵלָה",
+                "Report": "דווח"
+            }
+        },
+        "Info": {
+            "Title": "הפניות ומידע",
+            "CategoriesTra": "קטגוריות",
+            "Categories": {
+                "Health": "בְּרִיאוּת",
+                "EducationAndTraining": "חינוך והכשרה",
+                "Employment": "תעסוקה",
+                "MoneyAndTax": "כסף ומס",
+                "Housing": "שיכון",
+                "Justice": "צֶדֶק",
+                "GovernmentinIsrael": "הממשלה בישראל",
+                "FamilyAndRelationships": "משפחה ומערכות יחסים",
+                "SocialWelfare": "רווחה חברתית",
+                "Environment": "סביבה",
+                "ConsumerAffairs": "ענייני צרכנות",
+                "TravelAndRecreation": "מסעות, טיולים ונוֹפֶשׁ",
+                "Moving": "מעבר דירה",
+                "DeathAndBereavement": "מוות ושכול"
+            }
+        },
+        "Login": {
+            "Title": "התחבר"
+        },
+        "Maps": {
+            "Title": "מַפָּה"
+        }
+    },
+    "Modals": {
+        "Profile": {
+            "Title": "פּרוֹפִיל",
+            "Properties": {
+                "Name": "שֵׁם",
+                "Town": "עִיר",
+                "Education": "הַשׂכָּלָה",
+                "Job": "עבודה"
+            }
+        },
+        "Manage": {
+            "Title": "הַנהָלָה"
+        },
+        "School": {
+            "Title": "בית ספר"
+        },
+        "Settings": {
+            "Title": "הגדרות",
+            "Properties": {
+                "Language": "שָׂפָה"
+            }
+        },
+        "NewContact": {
+            "Title": "יצור קשר",
+            "Properties": {
+                "Title": "כותרת",
+                "Message": "הוֹדָעָה",
+                "AddPicture": "הוסף תמונה",
+                "Post": "שׁלח",
+                "Public": "פּוּמְבֵּית",
+                "Private": "פְּרָטִית"
+            },
+            "Category": "הקטגוריה",
+            "TicketCategories": {
+                "EngineeringAndPlanning": "הנדסה ותכנון",
+                "Accounting": "חשבונות",
+                "Education": "חינוך",
+                "Health": "בריאות",
+                "SocialWelfare": "רווחה",
+                "Purchasing": "רכש ואספקה",
+                "Fixing": "אחזקה",
+                "Arnona": "ארנונה",
+                "SafetyAndSecurity": "ביטחון ובטיחות",
+                "Levy": "גבייה"
+            },
+            "TicketTypes": {
+                "Question": "שְׁאֵלָה",
+                "Report": "דווח"
+            },
+            "Validation": {
+                "AlertTitle": "שגיאה בטוֹפֶס",
+                "TitleOnly": {
+                    "Message": "אנא הכנס את הכותרת"
+                },
+                "TitleAndBody": {
+                    "Message": "אנא הכנס את הכותרת וההודעה בטוֹפֶס"
+                },
+                "BodyOnly": {
+                    "Message": "אנא הכנס את ההודעה בטוֹפֶס"
+                },
+                "TitleAndBodyAndCategory": {
+                    "Message": "אנא הכנס את הכותרת ,ההודעה והקטגוריה בטוֹפֶס"
+                },
+                "CategoryOnly": {
+                    "Message": "אנא הכנס את הקטגוריה בטוֹפֶס"
+                },
+                "BodyAndCategory": {
+                    "Message": ""
+                },
+                "TitleAndCategory": {
+                    "Message": ""
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+<ion-navbar *navbar>
+    <ion-title>معلومات ومراجع</ion-title>
+</ion-navbar>
+
+<ion-content padding class="info">
+    <ion-card>
+        <ion-card-header>
+            الأقسام
+        </ion-card-header>
+
+        <ion-list>
+            <button ion-item *ngFor="#c of InfoItems" (click)="Forward(c)">
+                    <img class="radio-icon" src="{{c.imgsrc}}" item-left style="width: 30px; height: 30px;">{{c.title}}
+            </button>
+                <!--
+
+            <button ion-item (click)="Navigate()">
+                <img class="radio-icon" src="../images/icons/health-icon.png" item-left style="width: 30px; height: 30px;">
+                <!--
+                <ion-icon name="heart-outline" item-left></ion-icon>
+                الصحة
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/housing-icon.png" item-left style="width: 30px; height: 30px;">الإسكان
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/education-icon.png" item-left style="width: 30px; height: 30px;">التعليم
+                والتدريب
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/hiring-icon.png" item-left style="width: 30px; height: 30px;">التوظيف
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/moneyandtaxes-icon.png" item-left style="width: 30px; height: 30px;">الاموال
+                والضرائب
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/justice-icon.png" item-left style="width: 30px; height: 30px;">العدالة
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/govt-icon.png" item-left style="width: 30px; height: 30px;">الحكومة
+                في إسرائيل
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/family-icon.png" item-left style="width: 30px; height: 30px;">العائلة
+                والعلاقات
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/welfare-icon.png" item-left style="width: 30px; height: 30px;">الرعاية
+                الاجتماعية
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/env-icon.png" item-left style="width: 30px; height: 30px;">البيئة
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/cart-icon.png" item-left style="width: 30px; height: 30px;">شئون
+                المستهلك
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/travel-icon.png" item-left style="width: 30px; height: 30px;">السفر
+                والترفيه
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/moving-icon.png" item-left style="width: 30px; height: 30px;">الانتقال
+            </button>
+
+            <button ion-item>
+                <img class="radio-icon" src="../images/icons/death-icon.png" item-left style="width: 30px; height: 30px;">الموت
+                والفجيعة
+            </button>
+
+                -->
+
+        </ion-list>
+    </ion-card>
+</ion-content>
