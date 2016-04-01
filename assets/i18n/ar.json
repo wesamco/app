@@ -1,0 +1,131 @@
+{
+    "Back": "عُد",
+    "Ok": "موافق",
+    "Okay": "حسناً",
+    "Cancel": "إلغاء",
+    "Like": "אהבתי",
+    "Comment": "علق",
+    "Comments": "تعليقات",
+    "Search": "بحث",
+    "Login": "تسجيل الدخول",
+    "Username": "اسم المستخدم",
+    "Password": "كلمه السر",
+    "Pages": {
+        "News": {
+            "Title": "أخبار"
+        },
+        "Announcements": {
+            "Title": "إعلانات"
+        },
+        "Contact": {
+            "Title": "اتصل",
+            "Type": {
+                "Questions": "أسئلة",
+                "Question": "سؤال",
+                "Reports": "بلاغات",
+                "Report": "إبلاغ"
+            }
+        },
+        "Info": {
+            "Title": "مراجع ومعلومات",
+            "CategoriesTra": "الأقسام",
+            "Categories": {
+                "Health": "الصحة",
+                "EducationAndTraining": "التعليم والتدريب",
+                "Employment": "التوظيف",
+                "MoneyAndTax": "الاموال والضرائب",
+                "Housing": "الإسكان",
+                "Justice": "العدالة",
+                "GovernmentinIsrael": "الحكومة في إسرائيل",
+                "FamilyAndRelationships": "العائلة والعلاقات",
+                "SocialWelfare": "الرعاية الاجتماعية",
+                "Environment": "البيئة",
+                "ConsumerAffairs": "شئون المستهلك",
+                "TravelAndRecreation": "السفر والترفيه",
+                "Moving": "الانتقال",
+                "DeathAndBereavement": "الموت والفجيعة"
+            }
+        },
+        "Login": {
+            "Title": "تسجيل الدخول"
+        },
+        "Maps": {
+            "Title": "خارطة"
+        }
+    },
+    "Modals": {
+        "Profile": {
+            "Title": "بروفايل",
+            "Properties": {
+                "Name": "الأسم",
+                "Town": "البلدة",
+                "Education": "التعليم",
+                "Job": "الوظيفة"
+            }
+        },
+        "Manage": {
+            "Title": "إدارة"
+        },
+        "School": {
+            "Title": "المدرسة"
+        },
+        "Settings": {
+            "Title": "الإعدادات",
+            "Properties": {
+                "Language": "اللغة"
+            }
+        },
+        "NewContact": {
+            "Title": "اتصل",
+            "Properties": {
+                "Title": "العنوان",
+                "Message": "الرسالة",
+                "AddPicture": "إضافة صورة",
+                "Post": "إرسال",
+                "Public": "عامة",
+                "Private": "خاصة"
+            },
+            "Category": "الفئة",
+            "TicketCategories": {
+                "EngineeringAndPlanning": "الهندسة والتخطيط",
+                "Accounting": "حسابات",
+                "Education": "المعارف والثقافة",
+                "Health": "الصحة",
+                "SocialWelfare": "الرفاه الاجتماعي",
+                "Purchasing": "المشتريات",
+                "Fixing": "الصيانة",
+                "Arnona": "ضريبة الأرنونا",
+                "SafetyAndSecurity": "الأمن والأمان",
+                "Levy": "الجباية"
+            },
+            "TicketTypes": {
+                "Question": "سؤال",
+                "Report": "إبلاغ"
+            },
+            "Validation": {
+                "AlertTitle": "خطأ في الاستمارة",
+                "TitleOnly": {
+                    "Message": "يرجى إدخال العنوان في الاستمارة"
+                },
+                "TitleAndBody": {
+                    "Message": "يرجى إدخال العنوان والرسالة في الاستمارة"
+                },
+                "BodyOnly": {
+                    "Message": "يرجى إدخال الرسالة في الاستمارة"
+                },
+                "TitleAndBodyAndCategory": {
+                    "Message": "يرجى إدخال العنوان,الرسالة والفئة في الاستمارة"
+                },
+                "CategoryOnly": {
+                    "Message": "يرجى إدخال والفئة في الاستمارة"
+                },
+                "BodyAndCategory": {
+                    "Message": "يرجى إدخال الرسالة والفئة في الاستمارة"
+                },
+                "TitleAndCategory": {
+                    "Message": "يرجى إدخال العنوان والفئة في الاستمارة"
+                }
+            }
+        }
+    }
+}

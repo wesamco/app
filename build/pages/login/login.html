@@ -1,0 +1,29 @@
+<ion-navbar *navbar>
+    <ion-title>{{ 'Pages.Login.Title' | translate }}</ion-title>
+  
+
+</ion-navbar>
+
+<ion-content padding class="login">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="{{ 'Username' | translate }}"  [(ngModel)]="_user.Username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="{{ 'Password' | translate }}"  [(ngModel)]="_user.Password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div ng-if="Message">
+        {{Message}}
+  </div>
+
+  <div padding>
+    <button primary block  (click)="login()">{{ 'Login' | translate }}</button>
+  </div>
+
+
+</ion-content>

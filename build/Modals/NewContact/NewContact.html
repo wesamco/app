@@ -1,0 +1,79 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="close"></ion-icon>
+
+            </button>
+        </ion-buttons>
+
+        <ion-segment [(ngModel)]="Ticket.TicketType" (click)="ReportTypeSegClick()">
+            <ion-segment-button [value]="ticketType.Question">
+                {{ 'Pages.Contact.Type.Question' | translate }}
+            </ion-segment-button>
+            <ion-segment-button [value]="ticketType.Report">
+                {{ 'Pages.Contact.Type.Report' | translate }}
+            </ion-segment-button>
+
+
+        </ion-segment>
+
+        <!--
+        <ion-title>{{ 'Modals.NewContact.Title' | translate }}</ion-title>
+-->
+
+    </ion-toolbar>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+
+        <ion-list-header>
+
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label stacked>{{ 'Modals.NewContact.Properties.Title' | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="Ticket.Title"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>{{ 'Modals.NewContact.Properties.Message' | translate }} </ion-label>
+            <ion-textarea [(ngModel)]="Ticket.Body" style="height: 300px;"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{ 'Modals.NewContact.Category' | translate }}</ion-label>
+            <ion-select (change)="ChangeCategory($event)" okText="{{ 'Ok' | translate }}" cancelText="{{ 'Cancel' | translate }}">
+                <ion-option *ngFor="#tc of ticketCategories" value="{{tc}}"> {{tc}} </ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-segment [(ngModel)]="Ticket.IsPublic">
+                <ion-segment-button [value]="true">
+                    {{ 'Modals.NewContact.Properties.Public' | translate }}
+                </ion-segment-button>
+                <ion-segment-button [value]="false">
+                    {{ 'Modals.NewContact.Properties.Private' | translate }}
+                </ion-segment-button>
+            </ion-segment>
+        </ion-item>
+
+        <ion-item>
+            <button (click)="GetPicture()" round outline>
+                {{ 'Modals.NewContact.Properties.AddPicture' | translate }}
+            </button>
+        </ion-item>
+
+
+
+
+
+
+    </ion-list>
+    <button (click)="Submit()" round outline full>
+        {{ 'Modals.NewContact.Properties.Post' | translate }}
+    </button>
+</ion-content>

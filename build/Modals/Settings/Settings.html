@@ -1,0 +1,28 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                {{ 'Back' | translate }}
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            {{ 'Modals.Settings.Title' | translate }}
+        </ion-list-header>
+        <ion-item>
+            <ion-label>{{ 'Modals.Settings.Properties.Language' | translate }}</ion-label>
+            <ion-select [(ngModel)]="language" (change)="ChangeLanguage($event)"
+             okText="{{ 'Ok' | translate }}" cancelText="{{ 'Cancel' | translate }}">
+                <ion-option value="he" checked="{{SettingsService.translate.currentLang == 'he'}}">עברית</ion-option>
+                <ion-option value="ar" checked="{{SettingsService.translate.currentLang == 'ar'}}">العربية</ion-option>
+            </ion-select>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

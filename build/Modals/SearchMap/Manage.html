@@ -1,0 +1,77 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                                {{ 'Back' | translate }}
+            </button>
+        </ion-buttons>
+        <ion-segment [(ngModel)]="type">
+            <ion-segment-button value="questions">
+                {{ 'Pages.Contact.Type.Questions' | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="reports">
+                {{ 'Pages.Contact.Type.Reports' | translate }}
+            </ion-segment-button>
+
+        </ion-segment>
+        <!--
+        <ion-buttons end>
+            <button>
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+        -->
+    </ion-toolbar>
+
+</ion-navbar>
+
+<ion-content padding>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="search($event)" placeholder="{{ 'Search' | translate }}" hideCancelButton="{{ 'Cancel' | translate }}"></ion-searchbar>
+
+    <div [ngSwitch]="type">
+        <ion-list *ngSwitchWhen="'questions'">
+
+            <ion-list-header>
+                {{ 'Pages.Contact.Type.Questions' | translate }}
+            </ion-list-header>
+
+            <ion-item *ngFor="#QI of ResultQuestions" (click)="OpenTicket(QI)">
+                <ion-avatar item-left *ngIf="QI.ThmbnailsSrc">
+                    <img src="{{QI.ThmbnailsSrc}}">
+                </ion-avatar>
+                <h2 class="title">{{QI.Title}}</h2>
+                <h3>{{QI.Category}}</h3>
+                <p>{{QI.Members}} </p>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchWhen="'reports'">
+            <ion-list-header>
+                {{ 'Pages.Contact.Type.Reports' | translate }}
+            </ion-list-header>
+
+            <ion-item *ngFor="#RI of ResultReports" (click)="OpenTicket(RI)">
+                <ion-avatar item-left *ngIf="RI.ThmbnailsSrc">
+                    <img src="{{RI.ThmbnailsSrc}}">
+                </ion-avatar>
+                <h2>{{RI.Title}}</h2>
+                <h3>{{RI.Category}}</h3>
+                <p>{{RI.Members}} </p>
+            </ion-item>
+
+        </ion-list>
+
+    </div>
+
+
+    <!--
+
+    <button primary fab-bottom fab-right fab>
+        <ion-icon name='add'></ion-icon>
+    </button>
+-->
+
+</ion-content>

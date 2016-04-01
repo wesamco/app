@@ -1,0 +1,82 @@
+<ion-navbar *navbar>
+    <ion-title>{{ 'Pages.Info.Title' | translate }}</ion-title>
+</ion-navbar>
+
+<ion-content padding class="info">
+    <ion-card>
+        <ion-card-header>
+            {{ 'Pages.Info.CategoriesTra' | translate }}
+            <div ng-if="Path">
+                <small>
+                {{Path}}
+                </small>
+            </div>
+        </ion-card-header>
+        <ion-list *ngIf="!InfoItems">
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/health-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Health' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/education-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.EducationAndTraining' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/hiring-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Employment' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/moneyandtaxes-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.MoneyAndTax' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/housing-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Housing' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/justice-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Justice' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/govt-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.GovernmentinIsrael' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/family-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.FamilyAndRelationships' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/welfare-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.SocialWelfare' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/env-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Environment' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/cart-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.ConsumerAffairs' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/travel-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.TravelAndRecreation' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/moving-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.Moving' | translate }}
+            </button>
+            
+            <button ion-item (click)="Forward($event)">
+                <img class="radio-icon" src="../images/icons/death-icon.png" item-left style="width: 30px; height: 30px;"> {{ 'Pages.Info.Categories.DeathAndBereavement' | translate }}
+            </button>
+            
+        </ion-list>
+            
+        <ion-list *ngIf="InfoItems">
+            <button ion-item *ngFor="#c of InfoItems" (click)="Forward(c)">
+                <img class="radio-icon" src="{{c.imgsrc}}" item-left style="width: 30px; height: 30px;">{{c.title}}
+            </button>
+        </ion-list>
+        
+    </ion-card>
+</ion-content>

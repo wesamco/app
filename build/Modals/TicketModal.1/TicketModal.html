@@ -1,0 +1,54 @@
+<ion-navbar *navbar style="padding: 0;">
+
+    <ion-toolbar style="padding: 0;">
+        <ion-buttons start>
+            <button (click)="close()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+                {{ backto }}
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-navbar>
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            {{ticketInfo.Title}}
+            <br>
+            <span *ngFor="#member of ticketInfo.Members">{{member + '  ' }}</span>
+
+        </ion-card-header>
+        <ion-row>
+            <ion-col>
+                <h4>{{ticketInfo.Category}}</h4>
+            </ion-col>
+            <ion-col>
+                <h5>{{ticketInfo.TicketType.toString()}}</h5>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <!-- Add card content here! -->
+            Add card content here Add card content here Add card content here
+
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <!-- Add card content here! -->
+            Add card content here Add card content here Add card content here
+
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <!-- Add card content here! -->
+            Add card content here Add card content here Add card content here
+
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

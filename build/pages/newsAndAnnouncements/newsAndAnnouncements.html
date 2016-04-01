@@ -1,0 +1,50 @@
+<ion-navbar *navbar>
+    <ion-title>{{ 'Pages.News.Title' | translate }}</ion-title>
+
+    <button menuToggle="RightMenu">
+        <ion-icon name='menu'></ion-icon>
+    </button>
+
+</ion-navbar>
+<ion-content padding class="news">
+    <ion-list>
+            <ion-card *ngFor="#p of posts">
+
+                <ion-item padding style="margin-bottom:10px;">
+                    <ion-avatar item-left>
+                        <img src="http://placehold.it/90x90">
+                    </ion-avatar>
+                    <h2 style="margin-right: 10px;"> {{p.poster }} </h2>
+                    <ion-note item-right *ngIf="p.date.getDay() < 7">
+                        {{p.date | amCalendar}}
+                    </ion-note>
+                    <ion-note item-right *ngIf="p.date.getDay() > 7"> 
+                        {{p.date | amTimeAgo}}
+                    </ion-note>
+
+                </ion-item>
+
+
+                <ion-card-content padding>
+                    <img src="http://placehold.it/500x700">
+                    <p>{{p.content }}</p>
+                </ion-card-content>
+
+                <ion-item>
+                    <button primary clear item-left>
+                        <ion-icon name="thumbs-up"></ion-icon>
+                        <div style="margin-right:5px;"> {{p.likes }} أعجاب</div>
+                    </button>
+                    <button primary clear item-left>
+                        <ion-icon name="text"></ion-icon>
+                        <div style="margin-right:5px;">{{p.comments }} تعليقات</div>
+                    </button>
+                </ion-item>
+
+            </ion-card>
+    </ion-list>
+    <ion-infinite-scroll (infinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
